@@ -5,11 +5,11 @@ node{
         checkout scm
     }       
     stage('Build image') {
-        app = docker.build("siham/nginx")
+        app = docker.build("nginx")
     }
     
     stage('Run image') {
-        docker.image('siham/nginx').WithRun('-p 80:80') { c ->
+        docker.image('nginx').WithRun('-p 80:80') { c ->
         
         sh 'docker ps'
 
